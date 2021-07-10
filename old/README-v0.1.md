@@ -1,63 +1,62 @@
-# Yiimp_install_scrypt v0.2 (update Avril, 2020)
+# Yiimp_install_scrypt v0.1 (update Avril, 2020)
 
 Site : https://www.xavatar.com
 
 Discord : https://discord.gg/zcCXjkQ
 
-TUTO Youtube (16.04 / 18.04 - Without SSL) : https://www.youtube.com/watch?v=qE0rhfJ1g2k
+TUTO Youtube (16.04 - Without SSL) : https://www.youtube.com/watch?v=vdBCw6_cyig
+
+TUTO Youtube (16.04 - With SSL) : https://www.youtube.com/watch?v=fWwGow_i-Vw
 
 Official Yiimp (used in this script for Yiimp Installation): https://github.com/tpruvot/yiimp
 
-Original Yiimp Installer : https://github.com/cryptopool-builders/multipool_original_yiimp_installer
+Install script for yiimp on Ubuntu 17.10 : https://github.com/xavatar/yiimp_install_scrypt_ubuntu17.10
+
+Install script for yiimp on Ubuntu 18.04 : https://github.com/xavatar/yiimp_install_scrypt_ubuntu18.04
 
 
 ***********************************
 
-## Install script for yiimp on Ubuntu Server 16.04 / 18.04 (use Tpruvot's Yiimp)
+## Install script for yiimp on Ubuntu Server 16.04
 
-USE THIS SCRIPT ON FRESH INSTALL UBUNTU Server 16.04 / 18.04 !
+USE THIS SCRIPT ON FRESH INSTALL UBUNTU Server 16.04 !
 
 Connect on your VPS =>
-- apt update
-- apt upgrade
-- reboot
-- adduser pool (pool it's just an example...)
+- adduser pool
 - adduser pool sudo
 - su - pool
-- exit 
-- su - pool
-- sudo apt -y install git
-- git clone https://github.com/eskal/yiimp_install_scrypt.git
+- sudo apt-get -y install git
+- git clone https://github.com/xavatar/yiimp_install_scrypt.git
 - cd yiimp_install_scrypt/
-- bash install.sh (DO NOT RUN THE SCRIPT AS ROOT or SUDO)
-- At the end, you MUST REBOOT to finalize installation...
+- sudo bash install.sh (Do not run the script as root)
+- sudo bash screen-scrypt.sh (in tuto youtube, i launch the script with root... it does not matter)
+- NOT MANDATORY => sudo bash screen-stratum.sh (CONFIGURE BEFORE START this script... add or remove algo you use).
 
 Finish !
-- Go http://xxx.xxx.xxx.xxx or https://xxx.xxx.xxx.xxx (if you have chosen LetsEncrypt SSL). Enjoy !
-- Go http://xxx.xxx.xxx.xxx/site/myadmin or https://xxx.xxx.xxx.xxx/site/myadmin to access Panel Admin
-
-If you are issue after installation (nginx,mariadb... not found), use this script : bash install-debug.sh (watch the log during installation)
-
+Go http://xxx.xxxxxx.xxx or https://xxx.xxxxxx.xxx (if you have chosen LetsEncrypt SSL). Enjoy !
 
 ###### :bangbang: **YOU MUST UPDATE THE FOLLOWING FILES :**
 - **/var/web/serverconfig.php :** update this file to include your public ip (line = YAAMP_ADMIN_IP) to access the admin panel (Put your PERSONNAL IP, NOT IP of your VPS). update with public keys from exchanges. update with other information specific to your server..
 - **/etc/yiimp/keys.php :** update with secrect keys from the exchanges (not mandatory)
-- **If you want change 'AdminPanel' to access Panel Admin :** Edit this file "/var/web/yaamp/modules/site/SiteController.php" and Line 11 => change 'AdminPanel'
 
 
 ###### :bangbang: **IMPORTANT** : 
 
 - The configuration of yiimp and coin require a minimum of knowledge in linux
 - Your mysql information (login/Password) is saved in **~/.my.cnf**
+- **If you reboot your VPS**, you must restart screen-scrypt.sh (or add crontab)
+- Remember to restart **memcached service** after the db change (update or import new .sql)
 
 ***********************************
 
 ###### This script has an interactive beginning and will ask for the following information :
 
-- Server Name (no http:// or www !!!!! Example : crypto.com OR pool.crypto.com OR 80.41.52.63)
-- Are you using a subdomain (mypoolx11.crypto.com)
+- Enter time zone
+- Server Name 
+- Are you using a subdomain
 - Enter support email
 - Set stratum to AutoExchange
+- New location for /site/adminRights
 - Your Public IP for admin access (Put your PERSONNAL IP, NOT IP of your VPS)
 - Install Fail2ban
 - Install UFW and configure ports
