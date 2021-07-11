@@ -15,6 +15,7 @@ Only use this scrypt on a fresh install
 - sudo apt update
 - sudo apt upgrade
 - reboot 
+- sudo -i (Gives root)
 - adduser pooladmin (pooladmin is an example...)
 - adduser pooladmin sudo
 - su - pooladmin
