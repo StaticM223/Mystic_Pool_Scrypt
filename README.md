@@ -42,6 +42,11 @@ Finish !
 - The configuration of yiimp and coin require a minimum of knowledge in linux
 - Your mysql information (login/Password) is saved in **~/.my.cnf**
 
+###### :atom: **USEFUL COMMANDS** :
+- netstat -tlnp (Shows all running programs that use ports)
+-
+-
+-
 ***********************************
 
 If this helped please donate
