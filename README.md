@@ -23,7 +23,7 @@ Only use this scrypt on a fresh install
 - su - pooladmin
 - sudo apt -y install git
 - git clone https://github.com/StaticM223/Mystic_Pool_Scrypt.git
-- cd mystic_pool_scrypt/
+- cd Mystic_Pool_Scrypt/
 - bash install.sh (Do NOT use sudo or root)
 - sudo apt install php7.3-memcache php7.3-memcached memcached
 - Reboot after everything is installed
