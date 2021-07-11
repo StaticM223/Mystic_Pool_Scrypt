@@ -1,16 +1,3 @@
-#!/bin/bash
-################################################################################
-# Original Author:   crombiecrunch
-# Modified by : Xavatar (https://github.com/xavatar/yiimp_install_scrypt)
-# Web: https://www.xavatar.com    
-#
-# Program:
-#   Install yiimp on Ubuntu 16.04/18.04 running Nginx, MariaDB, and php7.2
-#   v0.2 (update Avril, 2020)
-# 
-################################################################################
-    
-
     output() {
     printf "\E[0;33;40m"
     echo $1
@@ -45,7 +32,7 @@
     clear
     echo
     echo -e "$GREEN************************************************************************$COL_RESET"
-    echo -e "$GREEN Yiimp Install Script v0.2 $COL_RESET"
+    echo -e "$GREEN Mystic Pool Scrypt $COL_RESET"
     echo -e "$GREEN Install yiimp on Ubuntu 16.04/18.04 running Nginx, MariaDB, and php7.4 $COL_RESET"
     echo -e "$GREEN************************************************************************$COL_RESET"
     echo
