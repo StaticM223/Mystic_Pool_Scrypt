@@ -15,6 +15,11 @@ Only use this scrypt on a fresh install
 - sudo apt update
 - sudo apt upgrade
 - reboot 
+- adduser pool (pool it's just an example...)
+- adduser pool sudo
+- su - pooladmin
+- exit
+- su - pooladmin
 - sudo apt -y install git
 - git clone https://github.com/StaticM223/Mystic_Pool_Scrypt.git
 - cd yiimp_install_scrypt/
